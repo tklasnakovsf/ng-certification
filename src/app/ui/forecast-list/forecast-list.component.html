@@ -1,5 +1,5 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let listItem of forecastList; trackBy: trackByZupCode">
+    <li class="list-group-item" *ngFor="let listItem of forecastList; trackBy: trackByZipCode">
         {{ listItem.dt | date : formatDate }}:
         {{ listItem.weather  }}
         - Min: {{ listItem.tempMin }}

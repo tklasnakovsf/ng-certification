@@ -1,6 +1,5 @@
 import {
     DailyForecast,
-    NormalizedForecastList, NormalizedWeatherData,
     Weather, WeatherTemp
 } from "../models/weather.models";
 import {
@@ -9,15 +8,16 @@ import {
     millisecondsInSec
 } from "../consts/common.consts";
 import { WeatherEnum } from "../enums/weather.enum";
+import { NormalizedForecastList, NormalizedWeatherData } from "../models/data.models";
 
 export function normalizeForecastList (list: DailyForecast[]): NormalizedForecastList[] {
-    return list.map(listItem => {
+    return list.map(({ dt, temp, weather}) => {
         return {
-            dt: listItem.dt * millisecondsInSec,
-            tempMin: listItem.temp.min,
-            tempMax: listItem.temp.max,
-            weather: listItem.weather[0].main,
-            imageSrc: `${imagesUrl}${WeatherEnum[listItem.weather[0].main] || ''}${imageFileExtension}`
+            dt: dt * millisecondsInSec,
+            tempMin: temp.min,
+            tempMax: temp.max,
+            weather: weather[0].main,
+            imageSrc: `${imagesUrl}${WeatherEnum[weather[0].main] || ''}${imageFileExtension}`
         }
     })
 }

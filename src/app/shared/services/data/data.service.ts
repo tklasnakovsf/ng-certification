@@ -5,8 +5,7 @@ import { catchError, map } from "rxjs/operators";
 import { defaultCountryCode, defaultDaysToShow } from "../../consts/common.consts";
 import { ParamsEnum } from '../../enums/params.enum'
 import { environment } from "../../../../environments/environment";
-import { WeatherForecastResponse } from "../../models/weather.models";
-import { FiveDaysForecastResponse } from "../../models/data.models";
+import { FiveDaysForecastResponse, WeatherForecastResponse } from "../../models/data.models";
 
 @Injectable({
     providedIn: 'root',

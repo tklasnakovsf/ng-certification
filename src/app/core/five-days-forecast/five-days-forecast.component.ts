@@ -5,6 +5,7 @@ import { FiveDaysForecast, FiveDaysForecastResponse } from "../../shared/models/
 import { map, take } from "rxjs/operators";
 import { normalizeForecastList } from "../../shared/utilities/array-utilities";
 import { routeIdName } from "../../shared/consts/common.consts";
+import { ForecastData } from "../../shared/models/data.models";
 
 @Component({
     templateUrl: './five-days-forecast.component.html',
@@ -23,7 +24,7 @@ export class FiveDaysForecastComponent implements OnInit {
         this.dataService.getFiveDaysForecast(zipCode)
             .pipe(
                 take(1),
-                map(({list, city}: FiveDaysForecastResponse) => {
+                map(({ list, city }: FiveDaysForecastResponse) => {
                     return {
                         list: normalizeForecastList(list),
                         cityName: city.name
@@ -31,7 +32,7 @@ export class FiveDaysForecastComponent implements OnInit {
                 })
             )
             .subscribe(
-                data => this.foreCastData = data,
+                (data: ForecastData) => this.foreCastData = data,
                 error => console.error(error));
     }
 }

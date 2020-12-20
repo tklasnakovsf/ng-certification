@@ -1,5 +1,5 @@
-import {Component, Output, EventEmitter, Input} from "@angular/core";
-import {NormalizedWeatherData} from "../../shared/models/weather.models";
+import { Component, Output, EventEmitter, Input } from "@angular/core";
+import { NormalizedWeatherData } from "../../shared/models/data.models";
 
 @Component({
     templateUrl: './current-forecast.component.html',

@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { NormalizedForecastList } from "../../shared/models/weather.models";
+import { NormalizedForecastList } from "../../shared/models/data.models";
 import { dateFormat } from "../../shared/consts/common.consts";
 
 @Component({
@@ -10,7 +10,7 @@ export class ForecastListComponent {
     @Input() forecastList: NormalizedForecastList[];
     formatDate = dateFormat;
 
-    trackByZupCode(index): number {
+    trackByZipCode(index): number {
         return index;
     }
 }
