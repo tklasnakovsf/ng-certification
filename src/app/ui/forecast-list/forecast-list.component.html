@@ -1,0 +1,9 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let listItem of forecastList; trackBy: trackByZupCode">
+        {{ listItem.dt | date : formatDate }}:
+        {{ listItem.weather  }}
+        - Min: {{ listItem.tempMin }}
+        - Max: {{ listItem.tempMax }}
+        <img class="icon" [src]="listItem.imageSrc" [alt]="listItem.weather">
+    </li>
+</ul>

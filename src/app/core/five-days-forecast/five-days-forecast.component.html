@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">5-day forecast for {{foreCastData?.cityName}}</h3>
+        </div>
+        <forecast-list [forecastList]="foreCastData?.list"></forecast-list>
+    </div>
+    <button [routerLink]="['/']" class="btn btn-success" tabindex="0" id="mainPageBtn">&lt; Back to main page</button>
+</div>

@@ -1,0 +1,9 @@
+<forecast-form
+        [warning]="warning"
+        (submitZipCode)="addNewLocation($event)"
+        (removeWarning)="removeWarning()">
+</forecast-form>
+<current-forecast
+        [locationsList]="locationsList"
+        (removeItem)="removeWeatherItem($event)">
+</current-forecast>
