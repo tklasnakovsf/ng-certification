@@ -2,7 +2,7 @@
 
 The application is created as step 2 for getting angular certificate.
 
-#Notes
+Notes
 
 * Angular core updated to version 11.0.5.
 * Fixed builds for dev and prod environments.
